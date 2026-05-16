@@ -165,12 +165,12 @@ export default function ResultCard({
                   {isConverting ? (
                     <>
                       <Loader2 size={16} className="animate-spin" />
-                      Converting...
+                      {platform === "spotify" ? "Preparing MP3..." : "Converting..."}
                     </>
                   ) : (
                     <>
                       <Download size={16} />
-                      Get Download Link
+                      {platform === "spotify" ? "Fetch Link" : "Get Download Link"}
                     </>
                   )}
                 </button>

@@ -70,6 +70,11 @@ export default function Home() {
       thumbnail: trackData.track.coverUrl,
       spotifyTrackUrl: url,
     });
+
+    // Step 2: Automatically start conversion to get download link
+    // No need to await if we want it to happen in the background, 
+    // but better to await so error handling works correctly within this function
+    await handleSpotifyConvert(url);
   }
 
   async function handleSpotifyConvert(url: string) {
